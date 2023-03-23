@@ -20,6 +20,3 @@ def found_result(context):
     assert email_input, f"Email input element is missing. "
     print('Test case passed')
 
-
-
-
