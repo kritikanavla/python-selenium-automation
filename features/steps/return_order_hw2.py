@@ -21,5 +21,3 @@ def found_result(context):
     print('Test case passed')
 
 
-
-
