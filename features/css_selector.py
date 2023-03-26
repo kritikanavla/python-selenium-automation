@@ -16,7 +16,7 @@ driver.find_element(By.CSS_SELECTOR, '.icp-nav-flag-lop')
 # multiple classes =>
 driver.find_element(By.CSS_SELECTOR, 'span.icp-nav-flag-us.icp-nav-flag-lop.icp-nav-flag')
 
-# By CSS, using attributes (except ID amd Class)
+# By CSS, using attributes (except ID and Class)
 driver.find_element(By.CSS_SELECTOR, "a[data-csa-c-content-id='nav_cs_bestsellers']")
 driver.find_element(By.CSS_SELECTOR, "a[href='/gp/bestsellers/?ref_=nav_cs_bestsellers']")
 # multiple attr
