@@ -21,3 +21,4 @@ def click_search(context):
 def verify_search_result(context, expected_result):
     actual_result = context.driver.find_element(By.XPATH, "//span[@class='a-color-state a-text-bold']").text
     assert expected_result == actual_result, f'Expected {expected_result} but got actual {actual_result}'
+
