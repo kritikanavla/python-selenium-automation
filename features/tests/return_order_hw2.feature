@@ -4,6 +4,3 @@ Feature: Test scenario for Returns & Orders
     When click Returns & Orders link
     Then Sign in page appears
 
-
-
-
