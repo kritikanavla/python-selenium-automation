@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
 
+
 best_sellers_locater = (By.CSS_SELECTOR, "a[data-csa-c-content-id='nav_cs_bestsellers']")
 elements_best_sellers = (By.CSS_SELECTOR, "div#zg_header a")
 
