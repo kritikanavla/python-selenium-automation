@@ -1,8 +1,12 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
+from selenium.webdriver.support import expected_conditions as EC
+
 
 footer_links = (By.CSS_SELECTOR, "table.navFooterMoreOnAmazon td.navFooterDescItem")
 search_button = (By.ID, "nav-search-submit-button")
+sign_in_button = (By.CSS_SELECTOR, "#nav-signin-tooltip a.nav-action-button")
+
 @given('Open Amazon page')
 def open_amazon(context):
     context.driver.get('https://www.amazon.com/')
@@ -16,6 +20,10 @@ def input_search_word(context, search_word):
 @when('Click on search button')
 def click_search(context):
     context.driver.find_element(*search_button).click()
+
+@when('Click Sign In from popup')
+def click_sign_in(context):
+    context.driver.wait.until(EC.element_to_be_clickable(sign_in_button)).click()
 
 
 @then('Verify that text {expected_result} is shown')
