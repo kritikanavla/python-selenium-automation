@@ -1,9 +1,10 @@
 Feature: Amazon cart tests
 
     Scenario: Verify that item page opens
-        Given Open Amazon HomePage
-        When input kitchy pizza cutter wheel into search
-        And click on item search button
+        Given Open Amazon page.
+        #When input kitchy pizza cutter wheel into search
+        When Input text kitchy pizza cutter wheel
+        And Click on search button
         And click on the item link
         And click on Add to Cart
         And click on cart button

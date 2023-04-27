@@ -8,31 +8,20 @@ add_to_cart =(By.CSS_SELECTOR,"input#add-to-cart-button")
 cart_button =(By.CSS_SELECTOR,"#attach-sidesheet-view-cart-button")
 item_subtotal =(By.CSS_SELECTOR,"span#sc-subtotal-label-activecart")
 
-@given('Open Amazon HomePage')
-def open_amazon(context):
-    context.driver.get('https://www.amazon.com/')
-
-@when('input {search_item} into search')
-def input_search_item(context,search_item):
-    context.driver.find_element(*search_box).send_keys(search_item)
-
-@when('click on item search button')
-def search_button_click(context):
-    context.driver.find_element(*search_button).click()
 
 @when('click on the item link')
 def item_click(context):
-    context.driver.find_elements(*pizza_cutter)[0].click()
+    context.app.search_page.find_elements(pizza_cutter)[0].click()
 
 @when('click on Add to Cart')
 def click_to_add(context):
-    context.driver.find_element(*add_to_cart).click()
+    context.app.search_page.click(add_to_cart)
 
 @when('click on cart button')
 def click_cart(context):
-    context.driver.find_element(*cart_button).click()
+    context.app.search_page.click(cart_button)
 
 @then('verify that cart has 1 item')
 def verify_cart_item(context):
-    actual_subtotal = context.driver.find_element(*item_subtotal).text
+    actual_subtotal = context.app.search_page.get_text(item_subtotal)
     assert actual_subtotal == 'Subtotal (1 item):', f"Expected 'Subtotal (1 item)' but got {actual_subtotal}"
